@@ -14,7 +14,7 @@ MYSQL_SETTINGS = {
 }
 
 ONLY_Tables = {
-	'table_name'
+	'registro_1_clientes'
 }
 
 
