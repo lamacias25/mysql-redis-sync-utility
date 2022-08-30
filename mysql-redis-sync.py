@@ -46,6 +46,7 @@ def updateRediSCache(insertupdate,prefix,keys, row):
             print("Updated Cache -> " +  cacheKey  + " Removed ")	
 
 def main():
+    print("inicio")
     stream = BinLogStreamReader(
         connection_settings=MYSQL_SETTINGS,server_id=1,
         only_events=[DeleteRowsEvent, WriteRowsEvent, UpdateRowsEvent],only_tables=ONLY_Tables)
@@ -67,6 +68,7 @@ def main():
                 print("[Insert] SQLBinLog Row :" + str(row))
                 updateRediSCache(True,prefix,vals.keys(),vals)            
 
+    print("fin")
     stream.close()
 
 
